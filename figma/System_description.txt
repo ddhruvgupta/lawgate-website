@@ -1,0 +1,19 @@
+This is the website of lawgate, a company that specializes in arbitration in India with expertise in construction industry. 
+
+the landing page is the homepage. its got a floating head / navbar. Below it is a carousel, which is built with different images and a "learn about us" or other button.
+below the carousel is a banner which highlights the specialties of the company: 
+
+- Dispute Resolution in construction industry
+- Techno-legal expertise in engineering and infrastructure disputes 
+- 32+ years of experience in execution and contract management
+
+a little summary of specialties
+ 
+latest in construction section is a carousel with different carousel shape than before, some of which are videos (hosted on youtube or in the static files). Let me know what is a good way to implement the video carousel. 
+
+ then comes the events sections. 
+ - upcoming seminars should link to another page: latest in construction. [this is a blog style page with recent videos, articles and opinions pieces]
+ - collaborate with us take the user to the contact us page
+ - upcoming webinars - also links to upcoming seminars
+
+There should be a section For articles where the articles written by the principle can be displayed. The page contains a panel on the left with other recently published / popular articles. 
