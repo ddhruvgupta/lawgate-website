@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 80px;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-primary;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Article prose styling */
+  .prose-primary {
+    @apply prose prose-lg max-w-none;
+  }
+  
+  .prose-primary h1,
+  .prose-primary h2,
+  .prose-primary h3,
+  .prose-primary h4,
+  .prose-primary h5,
+  .prose-primary h6 {
+    @apply text-primary;
+  }
+  
+  .prose-primary a {
+    @apply text-primary no-underline hover:underline;
+  }
+  
+  .prose-primary strong {
+    @apply text-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
