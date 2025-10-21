@@ -20,8 +20,9 @@
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "DENY",
-    "X-XSS-Protection": "1; mode=block"
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-XSS-Protection": "1; mode=block",
+    "Content-Security-Policy": "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://youtube.com;"
   },
   "mimeTypes": {
     ".json": "application/json",

@@ -114,9 +114,14 @@ export const getImageFallbackHandler = (fallbackUrls: string[]) => {
 };
 
 /**
- * Converts a YouTube URL to an embed URL
+ * Converts a YouTube URL to an embed URL using privacy-enhanced mode
  * @param url - YouTube video URL
- * @returns YouTube embed URL with autoplay and other parameters
+ * @returns YouTube embed URL with autoplay and other parameters using youtube-nocookie.com
+ * 
+ * Note: youtube-nocookie.com is YouTube's privacy-enhanced mode that:
+ * - Doesn't store user information unless they play the video
+ * - Has fewer embedding restrictions
+ * - More reliable for embedded playback
  */
 export const getYouTubeEmbedUrl = (url: string): string => {
     const videoId = getYouTubeVideoId(url);
@@ -125,5 +130,5 @@ export const getYouTubeEmbedUrl = (url: string): string => {
         return url; // Return original URL if we can't parse it
     }
 
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    return `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
 };
