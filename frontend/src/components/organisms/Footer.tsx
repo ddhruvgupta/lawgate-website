@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Linkedin, MessageCircle, Twitter } from 'lucide-react';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -19,7 +19,7 @@ export const Footer = () => {
                         </p>
                         <div className="flex space-x-4">
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/shishir-anand-gupta-29468824/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-secondary transition-colors"
@@ -28,13 +28,22 @@ export const Footer = () => {
                                 <Linkedin className="h-5 w-5" />
                             </a>
                             <a
-                                href="https://wa.me/"
+                                href="https://wa.me/919667887033?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20construction%20law%20services."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-secondary transition-colors"
                                 aria-label="WhatsApp"
                             >
                                 <MessageCircle className="h-5 w-5" />
+                            </a>
+                            <a
+                                href="https://x.com/engagelawgate"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-secondary transition-colors"
+                                aria-label="Follow us on X (Twitter)"
+                            >
+                                <Twitter className="h-5 w-5" />
                             </a>
                         </div>
                     </div>
