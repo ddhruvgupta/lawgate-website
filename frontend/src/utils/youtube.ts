@@ -130,5 +130,14 @@ export const getYouTubeEmbedUrl = (url: string): string => {
         return url; // Return original URL if we can't parse it
     }
 
-    return `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    // Use parameters that are more likely to work in production environments
+    const params = new URLSearchParams({
+        autoplay: '0', // Don't autoplay to avoid browser blocking
+        rel: '0', // Don't show related videos
+        modestbranding: '1', // Reduce YouTube branding
+        enablejsapi: '1', // Enable JavaScript API
+        origin: typeof window !== 'undefined' ? window.location.origin : 'https://www.lawgate.in'
+    });
+
+    return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
 };

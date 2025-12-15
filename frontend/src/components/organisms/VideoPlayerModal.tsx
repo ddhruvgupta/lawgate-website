@@ -10,7 +10,7 @@ interface VideoPlayerModalProps {
 }
 
 export const VideoPlayerModal = ({ url, title, isOpen, onClose }: VideoPlayerModalProps) => {
-    // Close on Escape key
+    // Close on Escape key and handle autoplay
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose();
@@ -27,6 +27,11 @@ export const VideoPlayerModal = ({ url, title, isOpen, onClose }: VideoPlayerMod
             document.body.style.overflow = 'unset';
         };
     }, [isOpen, onClose, url]);
+
+    // Generate embed URL with autoplay when modal is open
+    const embedUrl = isOpen ? 
+        getYouTubeEmbedUrl(url).replace('autoplay=0', 'autoplay=1') : 
+        getYouTubeEmbedUrl(url);
 
     if (!isOpen) return null;
 
@@ -56,13 +61,16 @@ export const VideoPlayerModal = ({ url, title, isOpen, onClose }: VideoPlayerMod
                 {/* Video Player */}
                 <div className="relative aspect-video bg-black">
                     <iframe
-                        src={getYouTubeEmbedUrl(url)}
+                        src={embedUrl}
                         width="100%"
                         height="100%"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
+                        referrerPolicy="strict-origin-when-cross-origin"
                         className="absolute inset-0 w-full h-full"
                         title={title}
+                        loading="lazy"
                     />
                 </div>
             </div>

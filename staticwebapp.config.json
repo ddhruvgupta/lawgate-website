@@ -6,7 +6,9 @@
   "routes": [
     {
       "route": "/api/*",
-      "allowedRoles": ["anonymous"]
+      "allowedRoles": [
+        "anonymous"
+      ]
     },
     {
       "route": "/assets/*"
@@ -19,13 +21,16 @@
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/api/*"]
+    "exclude": [
+      "/assets/*",
+      "/api/*"
+    ]
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "SAMEORIGIN",
     "X-XSS-Protection": "1; mode=block",
-    "Content-Security-Policy": "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://youtube.com;"
+    "Content-Security-Policy": "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://youtube.com *.elfsight.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com *.elfsight.com; object-src 'none';"
   },
   "mimeTypes": {
     ".json": "application/json",
