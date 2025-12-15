@@ -22,7 +22,7 @@ export const AboutSection = () => {
                             across complex infrastructure projects, contract management, and engineering disputes.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
-                            Led by Shishir Deshpande, our practice combines deep legal knowledge with technical
+                            Led by Shishir Gupta, our practice combines deep legal knowledge with technical
                             understanding of construction processes, enabling us to provide comprehensive solutions
                             to the most challenging disputes in the construction industry.
                         </p>
