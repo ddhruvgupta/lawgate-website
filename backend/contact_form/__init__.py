@@ -159,7 +159,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         connection_string = os.environ.get('AZURE_COMMUNICATION_CONNECTION_STRING')
         # Support comma-separated list of recipient emails, including ddhuvgupta@gmail.com
         recipient_emails_str = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in,ddhuvgupta@gmail.com')
-        recipient_emails = [email.strip() for email in recipient_emails_str.split(',')]
+        recipient_emails = [email.strip() for email in recipient_emails_str.split(',') if email.strip()]
         sender_email = os.environ.get('AZURE_SENDER_EMAIL', 'DoNotReply@lawgate.in')
         
         logging.info(f'Connection string configured: {bool(connection_string)}')

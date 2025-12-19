@@ -100,7 +100,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         sendgrid_key = os.environ.get('SENDGRID_API_KEY')
         # Support comma-separated list of recipient emails, including ddhuvgupta@gmail.com
         recipient_emails_str = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in,ddhuvgupta@gmail.com')
-        recipient_emails = [email.strip() for email in recipient_emails_str.split(',')]
+        recipient_emails = [email.strip() for email in recipient_emails_str.split(',') if email.strip()]
 
         if not sendgrid_key:
             logging.error('SendGrid API key not configured')
