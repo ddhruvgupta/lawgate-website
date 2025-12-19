@@ -166,7 +166,7 @@ func start
 AZURE_COMMUNICATION_CONNECTION_STRING=endpoint=https://...
 AZURE_SENDER_EMAIL=DoNotReply@2f39662f-7048-44df-a3f6-7389b7a30a23.azurecomm.net
 RECAPTCHA_SECRET_KEY=6LcCvu8rAAAAAMu3z9D5fPwK2_jMIZTEbvnElCVG
-LAWGATE_EMAIL=shishir@lawgate.in
+LAWGATE_EMAIL=shishir@lawgate.in,ddhuvgupta@gmail.com
 ```
 
 **GitHub Secrets (for CI/CD):**

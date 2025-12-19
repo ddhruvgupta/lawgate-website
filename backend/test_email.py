@@ -14,12 +14,14 @@ def test_email():
     # Get configuration from .env
     connection_string = os.environ.get('AZURE_COMMUNICATION_CONNECTION_STRING')
     sender_email = os.environ.get('AZURE_SENDER_EMAIL')
-    recipient_email = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in')
+    # Support comma-separated list of recipient emails
+    recipient_emails_str = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in,ddhuvgupta@gmail.com')
+    recipient_emails = [email.strip() for email in recipient_emails_str.split(',') if email.strip()]
     
     print("=== Azure Communication Services Email Test ===\n")
     print(f"✓ Connection string configured: {bool(connection_string)}")
     print(f"✓ Sender email: {sender_email}")
-    print(f"✓ Recipient email: {recipient_email}")
+    print(f"✓ Recipient emails: {recipient_emails}")
     print()
     
     if not connection_string:
@@ -41,7 +43,7 @@ def test_email():
         email_message = {
             "senderAddress": sender_email,
             "recipients": {
-                "to": [{"address": recipient_email}]
+                "to": [{"address": email_addr} for email_addr in recipient_emails]
             },
             "content": {
                 "subject": "Test Email from Lawgate Contact Form",
@@ -55,11 +57,11 @@ def test_email():
                     <p style="color: #666; font-size: 12px;">
                         Sent via Azure Communication Services<br>
                         From: {sender}<br>
-                        To: {recipient}
+                        To: {recipients}
                     </p>
                 </body>
                 </html>
-                """.format(sender=sender_email, recipient=recipient_email)
+                """.format(sender=sender_email, recipients=", ".join(recipient_emails))
             },
             "replyTo": [{"address": "test@example.com"}]
         }
@@ -76,7 +78,10 @@ def test_email():
         print("=" * 50)
         print(f"\nMessage ID: {result['id']}")
         print(f"Status: {result['status']}")
-        print(f"\n✉️  Check {recipient_email} for the test email\n")
+        print(f"\n✉️  Check the following email addresses for the test email:")
+        for recipient in recipient_emails:
+            print(f"   - {recipient}")
+        print()
         
     except Exception as e:
         print("=" * 50)

@@ -172,8 +172,8 @@ AZURE_SENDER_EMAIL=DoNotReply@lawgate.azurecomm.net  # or DoNotReply@lawgate.in
 # reCAPTCHA
 RECAPTCHA_SECRET_KEY=6LcCvu8rAAAAAMu3z9D5fPwK2_jMIZTEbvnElCVG
 
-# Recipient
-LAWGATE_EMAIL=shishir@lawgate.in
+# Recipients (comma-separated list for multiple recipients)
+LAWGATE_EMAIL=shishir@lawgate.in,ddhuvgupta@gmail.com
 ```
 
 ## Pricing
