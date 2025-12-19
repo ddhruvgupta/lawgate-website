@@ -157,11 +157,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # Send email using Azure Communication Services
         logging.info('📧 Preparing to send email...')
         connection_string = os.environ.get('AZURE_COMMUNICATION_CONNECTION_STRING')
-        recipient_email = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in')
+        # Support comma-separated list of recipient emails, including ddhuvgupta@gmail.com
+        recipient_emails_str = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in,ddhuvgupta@gmail.com')
+        recipient_emails = [email.strip() for email in recipient_emails_str.split(',')]
         sender_email = os.environ.get('AZURE_SENDER_EMAIL', 'DoNotReply@lawgate.in')
         
         logging.info(f'Connection string configured: {bool(connection_string)}')
-        logging.info(f'Recipient email: {recipient_email}')
+        logging.info(f'Recipient emails: {recipient_emails}')
         logging.info(f'Sender email: {sender_email}')
         
         if not connection_string:
@@ -186,7 +188,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             email_message = {
                 "senderAddress": sender_email,
                 "recipients": {
-                    "to": [{"address": recipient_email}]
+                    "to": [{"address": email_addr} for email_addr in recipient_emails]
                 },
                 "content": {
                     "subject": f"New Contact: {subject}",

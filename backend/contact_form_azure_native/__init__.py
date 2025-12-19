@@ -98,7 +98,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         # Send email using SendGrid
         sendgrid_key = os.environ.get('SENDGRID_API_KEY')
-        recipient_email = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in')
+        # Support comma-separated list of recipient emails, including ddhuvgupta@gmail.com
+        recipient_emails_str = os.environ.get('LAWGATE_EMAIL', 'shishir@lawgate.in,ddhuvgupta@gmail.com')
+        recipient_emails = [email.strip() for email in recipient_emails_str.split(',')]
 
         if not sendgrid_key:
             logging.error('SendGrid API key not configured')
@@ -145,7 +147,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # Create SendGrid message
         message_obj = Mail(
             from_email='noreply@lawgate.in',
-            to_emails=recipient_email,
+            to_emails=recipient_emails,
             subject=f'Contact Form: {subject if subject else "New Inquiry from " + name}',
             html_content=email_content
         )
