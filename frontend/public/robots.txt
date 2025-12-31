@@ -1,0 +1,11 @@
+# Robots.txt for LawGate
+# https://www.lawgate.in/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and api routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.lawgate.in/sitemap.xml
