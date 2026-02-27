@@ -14,6 +14,15 @@
       "route": "/assets/*"
     },
     {
+      "route": "/robots.txt"
+    },
+    {
+      "route": "/sitemap.xml"
+    },
+    {
+      "route": "/llms.txt"
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
@@ -40,6 +49,8 @@
     ".png": "image/png",
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
-    ".webp": "image/webp"
+    ".webp": "image/webp",
+    ".xml": "application/xml",
+    ".txt": "text/plain"
   }
 }

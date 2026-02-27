@@ -1,0 +1,30 @@
+# LawGate - Construction Arbitration & Dispute Resolution
+# https://www.lawgate.in
+
+## About LawGate
+LawGate is a specialized legal service provider focused on construction arbitration, dispute resolution, and contract management. We provide techno-legal expertise for the construction industry, helping clients navigate complex construction disputes with years of experience in construction law.
+
+## Services
+- Construction Arbitration
+- Dispute Resolution
+- Contract Management
+- Construction Law Consulting
+- Claim Management
+- Techno-Legal Expertise
+
+## Key Focus Areas
+- Construction Industry
+- Arbitration Services
+- Dispute Management
+- Legal Advisory for Construction Projects
+
+## Contact
+Website: https://www.lawgate.in
+Twitter: @engagelawgate
+LinkedIn: https://linkedin.com/in/shishir-anand-gupta-29468824
+
+## Site Structure
+/ - Homepage
+/latest-in-construction - Latest news and updates in construction
+/insights - Expert insights and analysis
+/contact - Contact information and form
