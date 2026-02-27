@@ -4,6 +4,7 @@ import { LatestInConstruction } from './components/pages/LatestInConstruction';
 import { InsightsPage } from './components/pages/InsightsPage';
 import { ContactPage } from './components/pages/ContactPage';
 import { ArticlePage } from './components/pages/ArticlePage';
+import { AboutPage } from './components/pages/AboutPage';
 import { Layout } from './components/templates/Layout';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/latest-in-construction" element={<LatestInConstruction />} />
           <Route path="/latest-in-construction/article/:articleId" element={<ArticlePage />} />
           <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>
       </Routes>
