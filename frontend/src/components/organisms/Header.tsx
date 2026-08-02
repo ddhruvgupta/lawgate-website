@@ -7,6 +7,7 @@ import { cn } from '../../utils';
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Triguna Global Trading', href: '/triguna-global-trading' },
     { name: 'Latest in Construction', href: '/latest-in-construction' },
     { name: 'Insights', href: '/insights' },
     { name: 'Contact Us', href: '/contact' },
