@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Building2, Briefcase, Cpu, Droplet, HeartPulse, Leaf, MapPin, Zap, Globe2, Handshake, Layers, ShieldCheck, Users } from 'lucide-react';
+import { Building2, Briefcase, Cpu, Droplet, HeartPulse, Leaf, MapPin, Zap, Globe2, Handshake, Layers, ShieldCheck, Users } from 'lucide-react';
 import { Button, Card, CardContent, CardHeader, CardTitle } from '../ui';
 import powerUtilitiesImg from '../../../imgs/Power & Utilities.jpeg';
 import waterImg from '../../../imgs/Water, Wastewater & Desalination.jpeg';
@@ -126,15 +126,6 @@ const partnershipSteps = [
     title: 'Enable',
     description: 'We help move conversations toward project development, commercial closure, implementation and long-term partnership.',
   },
-];
-
-const reasons = [
-  'Partnership-led, not transaction-led.',
-  'Multi-sector capability across infrastructure, energy, water, manufacturing, healthcare and public-sector-linked opportunities.',
-  'Backed by Law Gate’s wider professional ecosystem of consultants, legal experts and strategic advisors.',
-  'Strong local coordination with disciplined follow-through and documentation.',
-  'Risk-aware commercial approach shaped by dispute-resolution and advisory experience.',
-  'Global outlook with India execution strength for cross-border growth.',
 ];
 
 export const TrigunaGlobalTradingPage = () => {
