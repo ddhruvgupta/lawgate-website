@@ -1,5 +1,5 @@
 # Azure Functions Backend Dockerfile
-FROM mcr.microsoft.com/azure-functions/python:4-python3.11
+FROM --platform=linux/amd64 mcr.microsoft.com/azure-functions/python:4-python3.11
 
 WORKDIR /home/site/wwwroot
 
